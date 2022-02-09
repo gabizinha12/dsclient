@@ -59,7 +59,7 @@ public class ClientService {
 
 	}
 
-	public void delete(Long id, ClientDTO dto) {
+	public void delete(Long id) {
 		try {
 			repository.deleteById(id);
 		} catch (EmptyResultDataAccessException e) {
@@ -75,6 +75,7 @@ public class ClientService {
 	public void CopyDtoToEntity(ClientDTO dto, Client entity) {
 		entity.setName(dto.getName());
 		entity.setCpf(dto.getCpf());
+        entity.setIncome(dto.getIncome());
 		entity.setBirthDate(dto.getBirthDate());
 		entity.setChildren(dto.getChildren());
 	}
